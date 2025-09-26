@@ -38,19 +38,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,18 +49,37 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('You have pushed the button this many times:'),
+            const Text('Ф.И.О студента:'),
             Text(
-              '$_counter',
+              'Потемкин Денис Анатольевич',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Column(
+                children: [
+                  const Text('Номер группы:'),
+                  Text(
+                    'ИКБО-11-22',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Column(
+                children: [
+                  const Text('Номер студенческого билета:'),
+                  Text(
+                    '22И0393',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
